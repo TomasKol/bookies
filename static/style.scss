@@ -1,0 +1,158 @@
+$fontSize: 20px;
+
+%centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered {
+  @extend %centered;
+}
+
+body {
+  width: 100%;
+  background-color: transparent;
+  background: url("back.png");
+  font-family: calibri;
+}
+
+.btn, .form-control {
+  border-radius: 10% 20% 10% 20%;
+}
+
+#all {
+  @extend %centered;
+  width: 80%;
+}
+
+nav {
+  border-bottom: 1px solid rgba(23, 162, 184, 1);
+}
+
+a {
+  color: rgba(23, 162, 184, 1);
+}
+
+form.enter {
+  @extend %centered;
+  max-width: 200px;
+}
+form.enter > p, h1 {
+  text-align: center;
+}
+
+.alert, .alert-danger, .alert-info {
+  margin-top: 5px;
+  border-radius: 10% 20% 10% 20%;
+  background-color: transparent;
+  text-align: center;
+}
+
+#matches {
+  @extend %centered;
+  margin-top: 20px;
+}
+
+%box {
+  @extend %centered;
+  border: 1px solid rgba(23, 162, 184, 0.5);
+  border-radius: 10% 20% 10% 20%;
+  margin: 5px;
+  padding: 5px;
+  width: auto;
+  min-width: 300px;
+  box-shadow: 0 1px 5px rgba(23, 162, 184, 0.2);
+}
+
+.sorry {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.match {
+  @extend %box;
+  
+}
+.match:hover {
+  box-shadow: 0 2px 10px rgba(23, 162, 184, 1);
+}
+
+#matches > a, a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.match-title {
+  font-size: $fontSize*1.2;
+  font-family: constantia;
+  font-weight: bold;
+}
+
+.match-author {
+  font-size: $fontSize;
+}
+
+.match-isbn {
+  font-size: $fontSize*0.8;
+}
+
+.book {
+  @extend %box;
+}
+
+#goodreads-logo {
+  max-height: 120px;
+  text-align: center;
+}
+
+#book-rating {
+  font-size: $fontSize*1.5;
+  text-align: center;
+  height: auto;
+}
+
+#book-title {
+  font-size: $fontSize*2;
+  text-align: center;
+  font-family: constantia;
+}
+
+#book-author {
+  font-size: $fontSize*1.2;
+  text-align: center;
+  font-family: calibri;
+}
+
+.book-publish {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.review {
+  @extend %box;
+}
+
+.permission {
+  font-size: $fontSize*1.2;
+  text-align: center;
+}
+
+.rev-rating {
+  display: flex;
+  align-items: center;
+  font-size: $fontSize*2;
+  font-family: calibri;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.rev-said {
+  font-size: $fontSize*1;
+  font-family: calibri;
+  text-align: block;
+  padding-left: 7%;
+}
+
+#rev-form {
+  margin: 20px auto;
+}

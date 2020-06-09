@@ -1,0 +1,42 @@
+{% extends "user.html" %}
+
+{% block body %}
+  <div class="book row">
+    <div id="book-info" class="col">
+      <div id="book-title">{{book.title}}</div>
+      <div id="book-author">by {{book.author}}</div>
+      <div class="book-publish">Published in {{book.year}}</div>
+      <div class="book-publish">ISBN: {{book.isbn}}</div>
+    </div>
+    
+    <div id="book-goodreads" class="col">
+      <div id="goodreads-logo">
+        <a href="https://www.goodreads.com/search?q={{book.isbn}}" target="_blank" title="See the book's page at goodreads.com">
+          <img src="/static/goodreads.png" alt="goodreads logo">
+        </a>
+      </div>
+      <div id="book-rating">{{goodreads.average_rating}}/5 | {{goodreads.ratings_count}} ratings</div>
+    </div>
+    
+  </div>
+    {% if permission == True %}
+      <p class="permission"><a href="/book/{{book.book_id}}/addreview">Write a review.</a></p>
+    {% elif permission == False %}
+      <p class="permission">You have already written a review for this book</p>
+    {% endif %}
+
+    {% block addreview %}
+    {% endblock %}
+
+    {% if reviews|length == 0 %}
+      <p class="permission">No reviews yet.</p class="permission">
+    {% else %}
+      {% for rev in reviews %}
+      <div class="review row">
+        <div class="col-10 rev-said"><b>{{rev.name}} said:</b> {{rev.text}}</div>
+        <div class="col-2 rev-rating">{{rev.rating}}/5</div>
+      </div>
+      {% endfor %}
+    {% endif %}
+    
+{% endblock %}

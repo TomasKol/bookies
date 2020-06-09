@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+
+    <form action="/login", method="POST" class="enter">
+      <h1>bookies</h1>
+      <input autocomplete="off" autofocus required type="text" name="name" placeholder="username" class="form-control">
+      <input autocomplete="off" required type="password" name="password" placeholder="password" class="form-control">
+      <button type="submit" class="btn btn-outline-info col">log in</button>
+      {% block alert %}
+      {% endblock %}
+      <p>No account yet? <a href="/register">Register</a>.</p>
+    </form>
+
+
+{% endblock %}

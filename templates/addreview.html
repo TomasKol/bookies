@@ -1,0 +1,21 @@
+{% extends "book.html" %}
+{% block addreview %}
+  <div id="rev-form">
+    <form action="/book/{{book.book_id}}/addreview" method="POST">
+      <div class="form-row">
+        <select class="col-1 form-control" name="rating" required>
+          <option value="" selected disabled>rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <input class="col-10 form-control" type="textarea" name="text" placeholder="write a review..." class="form-control" required>
+        <button class="col-1 form-control btn btn-outline-info" type="submit" class="btn btn-info">Done</button>
+      </div>
+    </form>
+    {% block alert %}
+    {% endblock %}
+  </div>
+{% endblock %}

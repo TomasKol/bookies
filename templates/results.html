@@ -1,0 +1,27 @@
+{% extends "user.html" %}
+
+{% block body %}
+  {% if rows == None %}
+  <p class="alert alert-info">
+    Sorry, no match.
+  </p>
+  {% else %}
+  <div id="matches" class="row">
+    {% for row in rows %}
+      <a class="match col" href="/book/{{row.book_id}}">
+        <div >
+          <div class="match-title">
+            {{row.title}}
+          </div>
+          <div class="match-author">
+            by {{row.author}}
+          </div>
+          <div class="match-isbn">
+            ISBN: {{row.isbn}}
+          </div>
+        </div>
+      </a>
+        {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

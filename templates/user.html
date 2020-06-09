@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block topbar %}
+  <nav class="navbar">
+    <a class="navbar-brand">bookies</a>
+    <form class="form-inline" action="/search" method="POST">
+      <input name="search" class="form-control mr-sm-2" type="text" placeholder="title/author/ISBN" aria-label="Search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <a class="nav-link" href="/logout">log out</a>
+  </nav>
+{% endblock %}
+
+{% block body %}
+{% endblock %}
